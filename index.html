@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lobster&display=swap" rel="stylesheet">
+    <title>💕 Be My Valentine 💕</title>
+</head>
+
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Sound Toggle -->
+    <button class="sound-toggle" id="soundToggle" title="Toggle Sound">
+        <span id="soundIcon">🔊</span>
+    </button>
+    
+    <div class="container">
+        <div class="Mainprompt">
+            <div class="image-wrapper">
+                <img class="image" src="images/catflower.jpg" alt="Cute cat with flowers"></img>
+            </div>
+            <h1 class="hh fade-in" id="name">Hey beautiful! 💖</h1>
+            <p class="pp fade-in-delayed" id="question">Will you be my Valentine?</p>
+            <div class="buttons">
+                <button id="no-button" onclick="showMessage('No')">No 😢</button>
+                <button onclick="showMessage('Yes')" id="yesButton" class="yes-pulse">Yes 💕</button>
+            </div>
+            <div class="hidden-message" id="no-message">
+                <p>Nice try, but you can't escape that easily!</p>
+            </div>
+            <div class="hidden-message" id="yes-message">
+                <p>Yeees! See you on the 14th, Princess.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Pacifico", "Lobster", cursive;
+  background: linear-gradient(135deg, #ffdde1 0%, #ffb3c1 50%, #ff8fab 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-size: 35px;
+  color: rgb(255, 0, 174);
+  position: relative;
+}
+
+/* Floating Hearts Background */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 24px;
+  animation: floatUp 8s linear infinite;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Sound Toggle Button */
+.sound-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid #ff4d79;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 77, 121, 0.3);
+}
+
+.sound-toggle:hover {
+  transform: scale(1.1);
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(255, 77, 121, 0.5);
+}
+
+.sound-toggle:active {
+  transform: scale(0.95);
+}
+
+.hh {
+  -webkit-text-stroke: 2px #71004f;
+  font-weight: 900;
+  text-shadow: 3px 3px 6px rgba(113, 0, 79, 0.3);
+  margin: 20px 0;
+}
+
+.pp {
+  -webkit-text-stroke: 2px #71004f;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 800;
+  text-shadow: 3px 3px 6px rgba(113, 0, 79, 0.3);
+  margin: 20px 0;
+}
+
+/* Fade-in animations */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+.fade-in-delayed {
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  z-index: 2;
+  position: relative;
+}
+
+.Mainprompt {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  animation: slideIn 0.8s ease-out;
+  max-width: 90vw;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.image {
+  height: 280px;
+  max-width: 90vw;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.buttons button {
+  background: linear-gradient(135deg, #ff4d79, #ff1744);
+  color: #fff;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  margin: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  position: relative;
+  font-family: "Pacifico", cursive;
+  box-shadow: 0 8px 25px rgba(255, 77, 121, 0.4);
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 77, 121, 0.6);
+}
+
+.buttons button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(255, 77, 121, 0.4);
+}
+
+/* Yes button special animation */
+#yesButton {
+  background: linear-gradient(135deg, #ff4d79, #ff1744, #ff4d79);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+.yes-pulse {
+  animation: pulse 1.5s ease-in-out infinite, gradientShift 3s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+#yesButton:hover {
+  transform: scale(1.15) translateY(-5px) !important;
+  box-shadow: 0 15px 40px rgba(255, 77, 121, 0.8);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#no-button {
+  cursor: pointer;
+  background: linear-gradient(135deg, #888, #666);
+  transition: all 0.3s ease;
+}
+
+#no-button:hover {
+  background: linear-gradient(135deg, #666, #444);
+}
+
+.hidden-message {
+  display: none;
+  margin-top: 20px;
+}
+
+.move {
+  animation: moveNoMessage 0.5s linear;
+}
+
+@keyframes moveNoMessage {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, 30px);
+  }
+  50% {
+    transform: translate(-20px, -20px);
+  }
+  75% {
+    transform: translate(10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Confetti Canvas */
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Typing cursor blink */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 28px;
+  }
+  
+  .hh {
+    font-size: 32px;
+    -webkit-text-stroke: 1.5px #71004f;
+  }
+  
+  .pp {
+    font-size: 36px;
+    -webkit-text-stroke: 1.5px #71004f;
+  }
+  
+  .image {
+    height: 220px;
+  }
+  
+  .buttons button {
+    padding: 12px 35px;
+    font-size: 22px;
+    margin: 8px;
+  }
+  
+  .Mainprompt {
+    padding: 30px 25px;
+  }
+  
+  .sound-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 24px;
+  }
+  
+  .hh {
+    font-size: 28px;
+    -webkit-text-stroke: 1px #71004f;
+  }
+  
+  .pp {
+    font-size: 30px;
+    -webkit-text-stroke: 1px #71004f;
+  }
+  
+  .image {
+    height: 180px;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .buttons button {
+    padding: 14px 40px;
+    font-size: 20px;
+    margin: 8px 0;
+    width: 80%;
+    max-width: 200px;
+  }
+  
+  .Mainprompt {
+    padding: 25px 15px;
+  }
+  
+  .sound-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    top: 15px;
+    right: 15px;
+  }
+}
